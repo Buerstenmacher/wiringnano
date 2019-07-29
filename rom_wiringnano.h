@@ -59,8 +59,9 @@ pin 12 of the header.		*/
 #include <algorithm>
 #include <string>
 
+// this code depends on Repository: "Buerstenmacher/rom_header"
 #include "rom_error.h"
-//#include "rom_time.h"
+#include "rom_time.h"
 
 namespace rom {
 
@@ -281,26 +282,22 @@ return read_value();
 // **********************************************************************************
 // **********************************************************************************
 
-void wiringnano_t(void) {
-//::rom::autodelay delay{};
 
-wiringnano pin79{79};
-wiringnano pin232{232};
 
-auto start{rom::mashinetime()};
+void wiringnano_t(void) {	//simple demo of gpio output on jetson nano
+::rom::autodelay delay{};	//create a delay object from rom_time.h
+wiringnano pin79{79};		//create a wiringnano gpio interface for gpio 79 == pin 12
+wiringnano pin232{232};		//create a wiringnano gpio interface for gpio 232 == pin 16
+				// (see table at begin of file)
 
-for (uint32_t i{0};i<10000;++i){
-	pin79.pulllo();
-//	std::cout << uint32_t(pin232.read()) << " ";
-	while(pin232.read()!=0) {};
-
-	pin79.pullhi();
-//	std::cout << uint32_t(pin232.read()) << " ";
-	while(pin232.read()!=1) {};
+for (uint16_t i{0};i<10;++i){	//loop 10 times
+	pin79.pulllo();		//send 0.0 Volt to pin 12
+	delay(0.5);		//wait 0.5 sec.
+	pin79.pullhi();		//send 3.3 Volt to pin 12
+	delay(0.5);		//wait 0.5 sec.
 }
 
-auto dt{rom::mashinetime()-start};
-std::cout << dt << " seconds" << std::endl;
+std::cout << "Pin 16 is: " << (pin232.read()?"high":"low ") << std::endl; //read and output status of pin 16
 
 }
 
