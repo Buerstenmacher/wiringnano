@@ -1,33 +1,3 @@
-
-/*Jetson Nano J41 Header
-source:	https://www.jetsonhacks.com/nvidia-jetson-nano-j41-header-pinout/
- +-----+-----+---------+------+---+---Nano---+---+------+---------+-----+-----+
- |     |     |   Name  | Mode | V | Physical | V | Mode | Name    |     |     |
- +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+
- |     |     |    3.3V |      |   |  1 || 2  |   |      |    5.0V |     |     |
- |     |     |i2c_2_SDA|      |   |  3 || 4  |   |      |    5.0V |     |     |
- |     |     |i2c_2_SCL|      |   |  5 || 6  |   |      |      0V |     |     |
- |     |     |GPIO 216 |      |   |  7 || 8  |   |      |UART_2_TX|     |     |
- |     |     |      0V |      |   |  9 || 10 |   |      |UART_2_RX|     |     |
- |     |     |GPIO  50 |      |   | 11 || 12 |   |      |GPIO  79 |     |     |
- |     |     |GPIO  14 |      |   | 13 || 14 |   |      |      0V |     |     |
- |     |     |GPIO 194 |      |   | 15 || 16 |   |      |GPIO 232 |     |     |
- |     |     |    3.3V |      |   | 17 || 18 |   |      |GPIO  15 |     |     |
- |     |     |GPIO  16 |      |   | 19 || 20 |   |      |      0V |     |     |
- |     |     |GPIO  17 |      |   | 21 || 22 |   |      |GPIO  13 |     |     |
- |     |     |GPIO  18 |      |   | 23 || 24 |   |      |GPIO  19 |     |     |
- |     |     |      0V |      |   | 25 || 26 |   |      |GPIO  20 |     |     |
- |     |     |i2c_1_sda|      |   | 27 || 28 |   |      |i2c_1_scl|     |     |
- |     |     |GPIO 149 |      |   | 29 || 30 |   |      |      0V |     |     |
- |     |     |GPIO 200 |      |   | 31 || 32 |   |      |GPIO 168 |     |     |
- |     |     |GPIO  38 |      |   | 33 || 34 |   |      |      0V |     |     |
- |     |     |GPIO  76 |      |   | 35 || 36 |   |      |GPIO  51 |     |     |
- |     |     |GPIO  12 |      |   | 37 || 38 |   |      |GPIO  77 |     |     |
- |     |     |      0V |      |   | 39 || 40 |   |      |GPIO  78 |     |     |
- +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+
- |     |     |   Name  | Mode | V | Physical | V | Mode | Name    |     |     |
- +-----+-----+---------+------+---+---Nano---+---+------+---------+-----+-----+ */
-
 You can use this code to control the gpio-pins on your NVIDIA-jetson-nano.
 
 But remeber that gpio pins on the jetson-nano can only supply about 0,5mA of current. That's not enough to light up a standard led.
