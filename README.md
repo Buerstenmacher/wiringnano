@@ -15,7 +15,9 @@ Usage:
 
 create an object of wiringnano class:
 
---> wiringnano pin79{79};   //pin79 is now an object representing gpio79 == pin12 on J41 header
+--> wiringnano pin79{79};
+
+//pin79 is now an object representing gpio79 == pin12 on J41 header
 
 ---------------------------------------------------------------------
 
@@ -45,6 +47,8 @@ pin79.flow();
 
 read a gpio value and output it to user:
 
-std::cout << uint16_t(pin79.read()) <<std::endl;    //for cout you will have to convert uint8_t to som other integer otherwise it          will be interpretet as char 
+std::cout << uint16_t(pin79.read()) <<std::endl;   
+
+//for cout you will have to convert uint8_t to som other integer otherwise it          will be interpretet as char 
 
 ---------------------------------------------------------------------
