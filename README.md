@@ -1,14 +1,14 @@
-You can use this Code to control the GPIO-pins on your NVIDIA-Jetson-Nano.
+You can use this code to control the gpio-pins on your NVIDIA-jetson-nano.
 
-But remeber that gpio pins on the jetson-nano can only supply about 0,5mA of current. Thats not enough to light up a standard led.
+But remeber that gpio pins on the jetson-nano can only supply about 0,5mA of current. That's not enough to light up a standard led.
 
-To swicht an GPIO_Input from 0 to 1 to 0 you will n eed aproximately 5mA. I'm usung an OpAmp (LM324) to control gpio inputs via gpio outputs.   
+To swicht an gpio_input from 0 to 1 to 0 you will need aproximately 5mA. I'm usiug an low voltage OpAmp (LM324) to control gpio inputs via gpio outputs.   
 
-This is a c++11 header-only repository.
+This is a c++11 header-only repository. Dont search for .cpp files!  ;-)
 
-This code depends on repository "Buerstenmacher/rom_header". you can remove this dependency by deleting those calls to ::rom::error(****), but you will loose this type of basic error handling, and the objects of ::rom::autodelay ....  , but herby you will lose the timing functionality of rom_header repository.
+This code depends on repository "Buerstenmacher/rom_header". you can remove this dependency by deleting the calls to ::rom::error(****), but you will loose some type of basic error handling, and the objects of ::rom::autodelay ....  , but herby you will lose the precious timing functionality of rom_header repository.
 
-this code depends on a c++11 compiler. 
+this code depends on at least a c++11 compiler. 
 
 Usage:
 ------
@@ -51,6 +51,6 @@ read a gpio value and output it to user:
 
 std::cout << uint16_t(pin79.read()) <<std::endl;   
 
-//for cout you will have to convert uint8_t to som other integer otherwise it          will be interpretet as char 
+//for std::cout you will have to convert uint8_t to some other integer to prevent it from beeing interpretet as char 
 
 ---------------------------------------------------------------------
