@@ -11,11 +11,15 @@ Usage:
 ------
 
 create an object of wiringnano class:
+
 --> wiringnano pin79{79};   //pin79 is now an object representing gpio79 == pin12 on J41 header
 
 set a gpio to high voltage --> 3.3V:
+
 pin79.pullhi();
+
 or call:
+
 pin79.write(1);
 
 set a gpio to low voltage --> 0.0V :
