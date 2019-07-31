@@ -45,6 +45,8 @@ set a gpio to high input impendance without reading it's voltage:
 
 pin79.flow();
 
+---------------------------------------------------------------------
+
 read a gpio value and output it to user:
 
 std::cout << uint16_t(pin79.read()) <<std::endl;   
