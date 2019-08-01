@@ -1,14 +1,15 @@
-You can use this code to control the gpio-pins on your NVIDIA-jetson-nano.
+You can use this code to control the gpio-pins on your NVIDIA-Jetson-Nano.  :simple_smile:
 
-But remeber that gpio pins on the jetson-nano can only supply about 0,5mA of current. That's not enough to light up a standard led.
+But remeber that gpio pins on the Jetson-Nano can only supply about 0,5mA of current. That's not enough to light up a standard led.  :disappointed:
 
-To swicht an gpio_input from 0 to 1 to 0 you will need aproximately 5mA. I'm usiug an low voltage OpAmp (LM324) to control gpio inputs via gpio outputs.   
+To swicht an gpio_input from 0 to 1 and back to 0 you will need aproximately 5mA. I'm usiug an low voltage OpAmp (LM324) to control gpio inputs via gpio outputs.   :heavy_check_mark:
 
-This is a c++11 header-only repository. Do not search for .cpp files!  ;-)
+This is a c++11 header-only repository. Do not search for .cpp files!  :wink:
 
-This code depends on repository "Buerstenmacher/rom_header". you can remove this dependency by deleting the calls to ::rom::error(****), but you will loose some type of basic error handling, and the objects of ::rom::autodelay ....  , but herby you will lose the precious timing functionality of rom_header repository.
+This code depends on repository "Buerstenmacher/rom_header". you can remove this dependency by deleting the calls to ::rom::error(), but you will loose some type of basic error handling, and the objects of ::rom::autodelay ....  , but herby you will lose the precious timing functionality of rom_header repository.
+:stuck_out_tongue:
 
-this code depends on at least a c++11 compiler. 
+You will need a c++11 compiler. :computer:
 
 Usage:
 ------
@@ -19,7 +20,7 @@ create an object of wiringnano class:
 
 //pin79 is now an object representing gpio79 == pin12 on J41 header
 
----------------------------------------------------------------------
+-------------------------------------------------------------------
 
 set a gpio to high voltage --> 3.3V:
 
@@ -29,7 +30,7 @@ or call:
 
 pin79.write(1);
 
----------------------------------------------------------------------
+---------------
 
 set a gpio to low voltage --> 0.0V :
 
@@ -39,13 +40,13 @@ or call:
 
 pin79.write(0);
 
----------------------------------------------------------------------
+---------------
 
 set a gpio to high input impendance without reading it's voltage:
 
 pin79.flow();
 
----------------------------------------------------------------------
+-------------
 
 read a gpio value and output it to user:
 
