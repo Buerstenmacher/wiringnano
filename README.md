@@ -1,4 +1,4 @@
-You can use this code to control the gpio-pins on your NVIDIA-Jetson-Nano.  :simple_smile:
+You can use this code to control the gpio-pins on your NVIDIA-Jetson-Nano. :simple_smile:
 
 But remeber that gpio pins on the Jetson-Nano can only supply about 0,5mA of current. That's not enough to light up a standard led.  :disappointed:
 
