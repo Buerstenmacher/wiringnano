@@ -1,5 +1,5 @@
 
- ### Jetson Nano
+ ## Jetson Nano
  J41 Header Pinout
 
 
@@ -41,14 +41,16 @@ This code depends on repository "Buerstenmacher/rom_header". you can break this 
 
 You will need a c++11 compiler. :computer:  if you use g++: the appropriate compile-flag is "-std=c++11"
 
-Usage:
-------
+###Usage:
+---------
 
 create an object of wiringnano class:
 
---> wiringnano pin79{79};
-
+```cpp
+wiringnano pin79{79};
 //pin79 is now an object representing gpio79 == pin12 on J41 header
+```
+
 
 -------------------------------------------------------------------
 
