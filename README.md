@@ -1,8 +1,8 @@
 
  ### Jetson Nano
  
-  Name  | Physical | Physical |  Name 
-   3.3V |      1 | 2   |    5.0V 
+ | Name | Physical |Physical | Name | 
+ | 3.3V |        1 |     2   |  5.0V| 
    |     |     |i2c_2_SDA|      |   |  3 || 4  |   |      |    5.0V |     |     |
  |     |     |i2c_2_SCL|      |   |  5 || 6  |   |      |      0V |     |     |
  |     |     |GPIO 216 |      |   |  7 || 8  |   |      |UART_2_TX|     |     |
