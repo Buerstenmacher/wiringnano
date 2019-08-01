@@ -5,25 +5,26 @@
 
 | Name | Physical | Physical | Nmae |
 | ------------- |:-------------:| -----:|-----:|
-| col 3 is      | 1 | 2 |$1600 |
-| col 2 is      | 3 | 4 | $12 |
-| zebra stripes | 5 | 6 | $1 |
-| zebra stripes | 7 | 8 | $1 |
-| zebra stripes | 9 | 10 | $1 |
-| zebra stripes | 11| 12 | $1 |
-| zebra stripes | 13| 14 | $1 |
-| zebra stripes | are neat      |    $1 | $1 |
-| zebra stripes | are neat      |    $1 | $1 |
-| zebra stripes | are neat      |    $1 | $1 |
-| zebra stripes | are neat      |    $1 | $1 |
-| zebra stripes | are neat      |    $1 | $1 |
-| zebra stripes | are neat      |    $1 | $1 |
-| zebra stripes | are neat      |    $1 | $1 |
-| zebra stripes | are neat      |    $1 | $1 |
-| zebra stripes | are neat      |    $1 | $1 |
-| zebra stripes | are neat      |    $1 | $1 |
-| zebra stripes | are neat      |    $1 | $1 |
-| zebra stripes | are neat      |    $1 | $1 |
+| 3.3VDC        | 1  | 2  |$1600 |
+| i2c_2_sda     | 3  | 4  | $12 |
+| i2c_2_scl     | 5  | 6  | $1 |
+| gpio 216      | 7  | 8  | $1 |
+| GND           | 9  | 10 | $1 |
+| gpio 50       | 11 | 12 | $1 |
+| gpio 14       | 13 | 14 | $1 |
+| gpio 194      | 15 | 16 | $1 |
+| 3.3VDC        | 17 | 18 | $1 |
+| gpio 16       | 19 | 20 | $1 |
+| gpio 17       | 21 | 22 | $1 |
+| gpio 18       | 23 | 24 | $1 |
+| GND           | 25 | 26 | $1 |
+| i2c_1_sda     | 27 | 28 | $1 |
+| gpio 149      | 29 | 30 | $1 |
+| gpio 200      | 31 | 32 | $1 |
+| gpio 38       | 33 | 34 | $1 |
+| gpio 76       | 35 | 36 | $1 |
+| gpio 12       | 37 | 38 | $1 |
+| GND           | 39 | 40 | $1 |
 
 
 
