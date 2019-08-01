@@ -3,15 +3,15 @@
 
 
 
-| Name   |  Physical         |  Physical  |Nmae |
+| Name | Physical | Physical | Nmae |
 | ------------- |:-------------:| -----:|-----:|
-| col 3 is      | right-aligned | $1600 |$1600 |
-| col 2 is      | centered      |   $12 | $12 |
-| zebra stripes | are neat      |    $1 | $1 |
-| zebra stripes | are neat      |    $1 | $1 |
-| zebra stripes | are neat      |    $1 | $1 |
-| zebra stripes | are neat      |    $1 | $1 |
-| zebra stripes | are neat      |    $1 | $1 |
+| col 3 is      | 1 | 2 |$1600 |
+| col 2 is      | 3 | 4 | $12 |
+| zebra stripes | 5 | 6 | $1 |
+| zebra stripes | 7 | 8 | $1 |
+| zebra stripes | 9 | 10 | $1 |
+| zebra stripes | 11| 12 | $1 |
+| zebra stripes | 13| 14 | $1 |
 | zebra stripes | are neat      |    $1 | $1 |
 | zebra stripes | are neat      |    $1 | $1 |
 | zebra stripes | are neat      |    $1 | $1 |
