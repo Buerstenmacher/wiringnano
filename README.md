@@ -55,7 +55,6 @@ wiringnano pin79{79};
 -------------------------------------------------------------------
 
 set a gpio to high voltage --> 3.3V:
-
 ```cpp
 pin79.pullhi();
 ```
@@ -63,29 +62,27 @@ or call:
 ```cpp
 pin79.write(1);
 ```
-
 ---------------
-
 set a gpio to low voltage --> 0.0V :
-
+```cpp
 pin79.pulllo();
-
+```
 or call:
-
+```cpp
 pin79.write(0);
-
+```
 ---------------
-
 set a gpio to high input impendance without reading it's voltage:
-
+```cpp
 pin79.flow();
-
+```
 -------------
-
 read a gpio value and output it to user:
-
+```cpp
 std::cout << uint16_t(pin79.read()) <<std::endl;   
-
 //for std::cout you will have to convert uint8_t to some other integer to prevent it from beeing interpretet as char 
-
+//this should output 0 if you connect a 1k resistor from GND    to pin 12
+//this should output 1 if you connect a 1k resistor from 3.3VDC to pin 12
+//do NOT wire it directly if you dont have a resistor!!!
+```
 ---------------------------------------------------------------------
