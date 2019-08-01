@@ -1,6 +1,15 @@
 
  ### Jetson Nano
- 
+
+
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+
  | Name | Physical |Physical | Name | 
  | 3.3V |        1 |     2   |  5.0V| 
    |     |     |i2c_2_SDA|      |   |  3 || 4  |   |      |    5.0V |     |     |
