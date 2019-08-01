@@ -36,10 +36,10 @@ To swicht an gpio_input from 0 to 1 and back to 0 you will need aproximately 5mA
 
 This is a c++11 header-only repository. Do not search for .cpp files!  :wink:
 
-This code depends on repository "Buerstenmacher/rom_header". you can break this dependency by deleting the calls to ::rom::error() and the objects of ::rom::autodelay ....  , but herby you will lose the precious timing functionality of rom_header repository and you will loose some type of basic error handling,
+This code depends on repository "Buerstenmacher/rom_header". you can break this dependency by deleting the calls to ::rom::error() and the objects of ::rom::autodelay ....  , but hereby you will lose the precious timing functionality of rom_header repository and you will loose some type of basic error handling.
 :stuck_out_tongue:
 
-You will need a c++11 compiler. :computer:
+You will need a c++11 compiler. :computer:  if you use g++: the appropriate compile-flag is "-std=c++11"
 
 Usage:
 ------
