@@ -9,8 +9,8 @@
 | 3.3VDC        | 1  | 2  | 5.0VDC |
 | i2c_2_sda     | 3  | 4  | 5.0VDC |
 | i2c_2_scl     | 5  | 6  | GND    |
-| gpio 216      | 7  | 8  | UART_2_TX |
-| GND           | 9  | 10 | UART_2_RX |
+| gpio 216      | 7  | 8  | uart_2_TX |
+| GND           | 9  | 10 | uart_2_RX |
 | gpio 50       | 11 | 12 | gpio 79 |
 | gpio 14       | 13 | 14 | GND |
 | gpio 194      | 15 | 16 | gpio 232 |
