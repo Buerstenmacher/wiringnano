@@ -41,8 +41,8 @@ This code depends on repository "Buerstenmacher/rom_header". you can break this 
 
 You will need a c++11 compiler. :computer:  if you use g++: the appropriate compile-flag is "-std=c++11"
 
-###Usage:
----------
+### Usage:
+----------
 
 create an object of wiringnano class:
 
@@ -56,11 +56,13 @@ wiringnano pin79{79};
 
 set a gpio to high voltage --> 3.3V:
 
+```cpp
 pin79.pullhi();
-
+```
 or call:
-
+```cpp
 pin79.write(1);
+```
 
 ---------------
 
