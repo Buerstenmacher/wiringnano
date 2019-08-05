@@ -86,3 +86,5 @@ std::cout << uint16_t(pin79.read()) <<std::endl;
 //do NOT wire it directly if you dont have a resistor!!!
 ```
 ---------------------------------------------------------------------
+
+Do not forget to run your code as superuser! 
