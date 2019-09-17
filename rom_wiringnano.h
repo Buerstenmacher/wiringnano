@@ -50,14 +50,13 @@ pin 12 of the header.		*/
 #ifndef rom_wiringnano_h
 #define rom_wiringnano_h
 
+#include <iostream>
 #include <fstream>
 #include <vector>
 #include <algorithm>
 #include <string>
-
-//this code depends on Repository: "Buerstenmacher/rom_header"
-#include "rom_error.h"
-#include "rom_time.h"
+#include <chrono>
+#include <thread>
 
 namespace rom {	//contain everything in ::rom to avoid naming collision
 
@@ -75,7 +74,7 @@ fst.open(filename.c_str(),std::ios::out|std::ios::app); //This should create the
 fst.close();
 if (mode == "out")      {fst.open(filename.c_str(),std::ios::out);}	//open for writing
 if (mode == "in")       {fst.open(filename.c_str(),std::ios::in);}	//open for reading
-if (!fst.is_open()) {rom::error("A file with name "+filename+" failed to open in Mode: "+mode);}
+if (!fst.is_open()) {throw std::runtime_error("A file with name "+filename+" failed to open in Mode: "+mode);}
 }
 
 void close(void)        {fst.close();}
@@ -97,7 +96,7 @@ else if (is_unsync == 2) {     		//read from file to buffer
 	//but it's fast, it works and a do not have to read hundreds of pages about std::fstream :-)
         fst.read(reinterpret_cast<char*>(&(*data.begin())), size);
         }
-else 	{::rom::error("invalid value of member is_unsync in object of type ::rom::file");}
+else 	{throw std::runtime_error("invalid value of member is_unsync in object of type ::rom::file");}
 is_unsync = 0;			//updat the status of this object; it should be in sync by now
 close();			//close file, we do not keep it open longer than necessary
 }
@@ -114,10 +113,9 @@ flush();
 }
 
 //there is no construction without reading the content of file to data container
-//except if we are dealig with writeonly files from linux 
-file(const std::string& name = "",uint8_t writeonly = 0):fst{},
-	filename(name),is_unsync(writeonly?1:2),data{} {
-if (filename.size()==0) {filename = rom::humantime{}().substr(4,20)+".log";}//defaultname is "time.log"
+//except if we are dealig with writeonly files from linux
+file(const std::string& name = "time.log",uint8_t writeonly = 0):fst{},
+	filename(name),is_unsync(writeonly?1:2),data{} {	//defaultname is "time.log"
 flush();
 }
 
@@ -141,7 +139,7 @@ return data.at(pos);
 }
 
 uint8_t at(size_t pos) const {	//get a copy of the one byte at pos
-if (pos>=data.size()) {error("Trying to get item from file: "+filename+" that does not exist right now.");}
+if (pos>=data.size()) {throw std::runtime_error("Trying to get item from file: "+filename+" that does not exist right now.");}
 return data.at(pos);
 }
 
@@ -213,7 +211,7 @@ for (auto& s:available_directions()) {
 		return;
 		}
 	}
-error("Direction: "+dir+" is not available for gpio"+pinstr()+".");
+throw std::runtime_error("Direction: "+dir+" is not available for gpio"+pinstr()+".");
 }
 
 uint8_t read_value(void) {
@@ -227,7 +225,7 @@ wiringnano operator=(const wiringnano&) = delete;
 
 wiringnano(uint8_t nr):wp(nr),val{3},exp{nullptr},unexp{nullptr},dirfile{nullptr},valuefile{nullptr} {
 if (std::find(available_gpio().begin(),available_gpio().end(),nr)==available_gpio().end())
-	{::rom::error("Gpio: "+pinstr()+" is not available.");}
+	{throw std::runtime_error("Gpio: "+pinstr()+" is not available.");}
 exp = new rom::file{export_path(),1};
 unexp = new rom::file{unexport_path(),1};
 export_();
@@ -279,17 +277,17 @@ return read_value();
 
 //usage example function
 void wiringnano_t(void) {	//simple demo of gpio output on jetson nano
-::rom::autodelay delay{};	//create a delay object from rom_time.h
+//::rom::autodelay delay{};	//create a delay object from rom_time.h
 wiringnano pin79{79};		//create a wiringnano gpio interface for gpio 79 == pin 12
 wiringnano pin232{232};		//create a wiringnano gpio interface for gpio 232 == pin 16
 				// (see table at begin of file)
 std::cout <<  "Connect a Led to pin 12 of your Jetson-Nano and wire it via a 4k7 resistor to"<< std::endl;
 std::cout <<  "pin 6 (GND). Dim the lights of your room! It should be blinking for 20 seconds. "<< std::endl;
-for (uint32_t i{0};i<20;++i){	//loop 10 times
-	pin79.pulllo();		//send 0.0 Volt to pin 12
-	delay(0.5);		//wait 0.5 sec.
-	pin79.pullhi();		//send 3.3 Volt to pin 12
-	delay(0.5);		//wait 0.5 sec.
+for (uint32_t i{0};i<20;++i){						//loop 10 times
+	pin79.pulllo();							//send 0.0 Volt to pin 12
+	std::this_thread::sleep_for(std::chrono::milliseconds(500));	//wait 0.5 sec.
+	pin79.pullhi();							//send 3.3 Volt to pin 12
+	std::this_thread::sleep_for(std::chrono::milliseconds(500));	//wait 0.5 sec.
 	}
 std::cout <<  "We are stopping blinking now and measue the voltage on pin 16 "<< std::endl;
 std::cout << "Pin 16 is: " << (pin232.read()?"high":"low ") << std::endl; //read and output status of pin 16
